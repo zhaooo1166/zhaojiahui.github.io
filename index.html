@@ -1,80 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Jiahui Zhao</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: auto;
-            line-height: 1.6;
-        }
-        h1 {
-            margin-bottom: 5px;
-        }
-        .section {
-            margin-top: 30px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jiahui Zhao</title>
+  <style>
+    :root { --fg:#111; --muted:#555; --line:#e6e6e6; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+           color:var(--fg); margin:0; background:#fff; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 20px 60px; }
+    .top { display:flex; gap:18px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; }
+    .name { font-size: 40px; font-weight: 800; margin:0; letter-spacing:-0.5px;}
+    .tag { margin:8px 0 0; color:var(--muted); font-size:16px; line-height:1.5; }
+    .links { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
+    .btn { display:inline-block; padding:8px 12px; border:1px solid var(--line);
+           border-radius:10px; text-decoration:none; color:var(--fg); font-size:14px; }
+    .btn:hover { border-color:#cfcfcf; }
+    hr { border:none; border-top:1px solid var(--line); margin:22px 0; }
+    h2 { font-size:18px; margin:26px 0 10px; }
+    p { margin:10px 0; line-height:1.7; }
+    ul { margin:8px 0 0 18px; color:var(--fg); }
+    li { margin:6px 0; line-height:1.6; }
+    .grid { display:grid; grid-template-columns: 1fr; gap:14px; }
+    @media (min-width: 880px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .card { border:1px solid var(--line); border-radius:14px; padding:14px 14px 12px; }
+    .card-title { font-weight:700; margin:0 0 6px; }
+    .meta { color:var(--muted); font-size:13px; margin:0 0 10px; }
+    .pill { display:inline-block; font-size:12px; padding:3px 8px; border:1px solid var(--line);
+            border-radius:999px; margin:0 6px 6px 0; color:var(--muted); }
+    .small { color:var(--muted); font-size:14px; }
+    .footer { margin-top:34px; color:var(--muted); font-size:13px; }
+  </style>
 </head>
-
 <body>
+<div class="wrap">
 
-<h1>Jiahui Zhao</h1>
-<p><b>MTech AI Systems</b>, NUS-ISS</p>
-<p><b>PhD Applicant in 3D Vision / Human-Centric AI</b></p>
+  <div class="top">
+    <div>
+      <h1 class="name">Jiahui Zhao</h1>
+      <p class="tag">
+        MTech AI Systems @ NUS-ISS · PhD applicant (Aug’26 / Jan’27)<br/>
+        <b>3D Vision</b> · <b>Human Motion</b> · <b>Robust / Data-efficient Learning</b> · <b>AI for Healthcare</b>
+      </p>
 
-<hr>
+      <div class="links">
+        <a class="btn" href="mailto:[your_email]">Email</a>
+        <a class="btn" href="[your_github_link]" target="_blank">GitHub</a>
+        <a class="btn" href="[your_scholar_link]" target="_blank">Google Scholar</a>
+        <a class="btn" href="assets/cv.pdf" target="_blank">CV (PDF)</a>
+        <a class="btn" href="[optional_linkedin]" target="_blank">LinkedIn</a>
+      </div>
 
-<div class="section">
-<h2>About Me</h2>
-<p>
-I am currently an MTech student in AI Systems at NUS-ISS. My research focuses on
-geometry-aware 3D vision, human motion understanding, and robust learning systems.
-I am particularly interested in building temporally consistent 3D representations
-for real-world applications such as human motion analysis and medical imaging.
-</p>
+      <p class="small">
+        I build end-to-end systems and care about <b>temporal consistency</b>, <b>geometry</b>, and <b>real-world robustness</b>.
+        My recent work includes multi-view 3D human motion pipelines (SMPL-X) and 3D CNN-based cardiac CT modeling.
+      </p>
+    </div>
+  </div>
+
+  <hr/>
+
+  <h2>Research Focus</h2>
+  <p>
+    I am interested in learning <b>geometry-aware, temporally coherent 3D representations</b> that stay stable under occlusion,
+    noisy measurements, and domain shift. I enjoy projects that connect <b>core vision/ML</b> with <b>usable systems</b>.
+  </p>
+  <p class="small">
+    Keywords: 3D human pose/shape, multi-view geometry, temporal modeling, dynamic scenes, robustness, data efficiency.
+  </p>
+
+  <h2>Selected Projects</h2>
+  <div class="grid">
+
+    <div class="card">
+      <p class="card-title">Multi-view 3D Human Motion Analysis (Fitness / Fit3D)</p>
+      <p class="meta">SMPL-X · Multi-view pipeline · Temporal modeling</p>
+      <div>
+        <span class="pill">SMPL-X</span><span class="pill">Temporal consistency</span>
+        <span class="pill">Occlusion/noisy keypoints</span><span class="pill">Rep counting</span>
+      </div>
+      <ul>
+        <li>Built a multi-view pipeline to reconstruct temporally consistent 3D motion for indoor fitness scenarios.</li>
+        <li>Trained sequence models for repetition counting and abnormal-motion detection; handled occlusion and viewpoint shifts.</li>
+        <li>Packaged the system for demo/analysis with reproducible preprocessing and evaluation scripts.</li>
+      </ul>
+      <p class="small">
+        Links: <a href="[project_repo_or_page]" target="_blank">code/project page</a>
+        · <a href="[demo_video_link]" target="_blank">demo video</a>
+      </p>
+    </div>
+
+    <div class="card">
+      <p class="card-title">Cardiac CT Analysis (Theia Health, Singapore)</p>
+      <p class="meta">3D CNN · Medical imaging · End-to-end training & debugging</p>
+      <div>
+        <span class="pill">3D CNN</span><span class="pill">Class imbalance</span>
+        <span class="pill">Training stabilization</span><span class="pill">Clinical data</span>
+      </div>
+      <ul>
+        <li>Implemented and trained 3D CNN models for cardiac CT tasks, including preprocessing and performance tracking.</li>
+        <li>Practiced systematic debugging when loss stagnates/oscillates (LR, normalization, sampling, augmentations, labels).</li>
+        <li>Focused on robustness for real-world clinical settings (noise, limited labels, domain shift).</li>
+      </ul>
+      <p class="small">
+        (If NDA) Share details upon request · Optional: <a href="[non-sensitive_summary_link]" target="_blank">public summary</a>
+      </p>
+    </div>
+
+  </div>
+
+  <h2>Publications / Manuscripts</h2>
+  <p class="small">
+    <!-- 没有就写 “In preparation” + 1 行主题，不要硬凑 -->
+    [If none] Manuscripts in preparation on: [topic 1], [topic 2].<br/>
+    [If any] [Author], [Title], [Venue], [Year]. <a href="[paper_link]">paper</a>
+  </p>
+
+  <h2>Education</h2>
+  <ul>
+    <li><b>NUS-ISS</b> — MTech in Artificial Intelligence Systems (current)</li>
+    <li><b>Anhui University</b> — BEng in Artificial Intelligence</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>
+    Email: <a href="mailto:[your_email]">[your_email]</a><br/>
+    Location: Singapore
+  </p>
+
+  <div class="footer">
+    Last updated: [2026-02]
+  </div>
+
 </div>
-
-<div class="section">
-<h2>Research Interests</h2>
-<ul>
-<li>3D Vision and Multi-view Geometry</li>
-<li>Human Motion Analysis</li>
-<li>Neural Rendering and Dynamic Scene Understanding</li>
-<li>AI for Healthcare Imaging</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Selected Projects</h2>
-
-<p><b>Multi-view 3D Human Motion Analysis (Fit3D)</b><br>
-Built a temporally consistent 3D motion reconstruction pipeline using SMPL-X.
-Developed temporal models for repetition counting and abnormal motion detection
-under occlusion and noisy keypoints.
-</p>
-
-<p><b>Cardiac CT Analysis (Theia Health)</b><br>
-Implemented and trained 3D CNN models for coronary CT analysis, including
-data preprocessing, class imbalance handling, and training stabilization.
-</p>
-
-</div>
-
-<div class="section">
-<h2>Experience</h2>
-<ul>
-<li>AI Intern, Theia Health, Singapore</li>
-<li>MTech AI Systems, NUS-ISS</li>
-<li>BEng Artificial Intelligence, Anhui University</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>CV</h2>
-<p><a href="#">Download my CV (PDF)</a></p>
-</div>
-
 </body>
 </html>
